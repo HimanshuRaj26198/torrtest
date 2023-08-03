@@ -7,10 +7,10 @@ app.use(express.json());
 app.use(cors("dev"));
 
 // TorrentSearchApi.enableProvider('Torrent9');
-TorrentSearchApi.enableProvider('1337x');
+TorrentSearchApi.enablePublicProviders();
 
 app.get("/", async (req, res)=>{
-    const torrents = await TorrentSearchApi.search('3 idiots', 'Movies', 20);
+    const torrents = await TorrentSearchApi.search('3 idiots', 'Movies', 100);
     console.log(torrents);
     res.send(torrents);
 })

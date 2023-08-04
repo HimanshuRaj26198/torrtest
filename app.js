@@ -6,8 +6,17 @@ const app = express();
 app.use(express.json());
 app.use(cors("dev"));
 
-// TorrentSearchApi.enableProvider('Torrent9');
-TorrentSearchApi.enablePublicProviders();
+TorrentSearchApi.enableProvider('Torrent9');
+TorrentSearchApi.enableProvider('1337x');
+TorrentSearchApi.enableProvider('ThePirateBay');
+TorrentSearchApi.enableProvider('KickassTorrents');
+KickassTorrents.enableProvider('Rarbg');
+KickassTorrents.enableProvider('TorrentProject');
+KickassTorrents.enableProvider('Yts');
+KickassTorrents.enableProvider('Limetorrents');
+KickassTorrents.enableProvider('Eztv');
+
+
 
 app.get("/", async (req, res)=>{
     const torrents = await TorrentSearchApi.search('3 idiots', 'Movies', 100);

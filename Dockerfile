@@ -1,6 +1,6 @@
 
 # Use the official Node.js image as the base image
-FROM node:18
+FROM node:14
 
 # Set the working directory in the container
 WORKDIR /app
@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . /app
 
 # Install the application dependencies
-RUN npm install
+RUN npm ci
 
 # Expose port 3000 for the application
 EXPOSE 3000
